@@ -1,30 +1,35 @@
 @extends("layout")
 @section("contenido")
-<table>
-    <h2>INGRESAR USUARIO</h2>
-    <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Direccion</th>
-        <th>Telefono</th>
-    </tr>
-    <form method="post" action="/ingresar-usuario">
+    <h1>INGRESAR USUARIO</h1>
+    <form class="form-group form-control-lg" method="post" action="/ingresar-usuario" >
         @csrf
-        <tr>
-            <th><input type="text" maxlength="100" name="nombre"></th>
-            <th><input type="text" maxlength="200" name="apellido"></th>
-            <th><input type="text" maxlength="200" name="direccion"></th>
-            <th><input type="number" maxlength="9" name="telefono"></th>
-        </tr>
-        <tr>
-            <td colspan="5"><input type="submit" name="submit" value="Guardar"></td>
-        </tr>
-        <tr>
-            <td colspan="5"><input type="reset" name="reset" value="Limpiar"></td>
-        </tr>
+        <th class="form-control"><input type="text" maxlength="100" name="nombre" @error('nombre') style="border: 1px solid red" @enderror placeholder="Nombre"></th>
+        @error('nombre')
+        <br><span style="color: red">{{$message}}</span>
+        @enderror
+        <br>
+        <th class="form-control"><input type="text" maxlength="200" name="apellido" @error('apellido') style="border: 1px solid red" @enderror placeholder="Apellidos"></th>
+        @error('apellido')
+        <br><span style="color: red">{{$message}}</span>
+        @enderror
+        <br>
+        <th class="form-control"><input type="text" maxlength="200" name="direccion" @error('direccion') style="border: 1px solid red" @enderror placeholder="Direccion"></th>
+        @error('direccion')
+        <br><span style="color: red">{{$message}}</span>
+        @enderror
+        <br>
+        <th class="form-control"><input type="number" maxlength="9" name="telefono" @error('telefono') style="border: 1px solid red" @enderror placeholder="Telefono/celular"></th>
+        @error('telefono')
+        <br><span style="color: red">{{$message}}</span>
+        @enderror
+        <br>
+        <th class="form-control"><input type="text" maxlength="30" name="email" @error('email') style="border: 1px solid red" @enderror placeholder="Ingrese su correo electronico"></th>
+        @error('email')
+        <br><span style="color: red">{{$message}}</span>
+        @enderror
+        <br>
+        <td colspan="5"><input type="submit" name="submit" value="Guardar"></td>
+        <td colspan="5"><input type="reset" name="reset" value="Limpiar"></td>
+
     </form>
-
-
-
-</table>
 @endsection
