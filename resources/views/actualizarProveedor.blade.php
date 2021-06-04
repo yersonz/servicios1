@@ -1,6 +1,7 @@
-@extends("layout")
-@section("contenido")
-    <table border="1">
+@extends("layouts.app")
+@section("content")
+    <div class="container">
+    <table class="table">
         <tr>
             <th>Nombre</th>
             <th>Apellido</th>
@@ -11,10 +12,10 @@
             @csrf
         <tr>
                 <input type="hidden" name="id" value="{{$data["id"]}}">
-                <th><input type="text" size="10" name="nombre" @error('nombre') style="border: 1px solid red" @enderror value="{{$data["Nombre"]}}"></th>
-                <th><input type="text" size="10" name="apellido" @error('apellido') style="border: 1px solid red" @enderror value="{{$data["Apellidos"]}}"></th>
-                <th><input type="text" size="10" name="direccion" @error('direccion') style="border: 1px solid red" @enderror value="{{$data["Direccion"]}}"></th>
-                <th><input type="text" size="10" name="telefono" @error('telefono') style="border: 1px solid red" @enderror value="{{$data["Telefono"]}}"></th>
+                <th><input type="text" size="20" name="nombre" @error('nombre') style="border: 1px solid red" @enderror value="{{$data["Nombre"]}}"></th>
+                <th><input type="text" size="20" name="apellido" @error('apellido') style="border: 1px solid red" @enderror value="{{$data["Apellidos"]}}"></th>
+                <th><input type="text" size="20" name="direccion" @error('direccion') style="border: 1px solid red" @enderror value="{{$data["Direccion"]}}"></th>
+                <th><input type="text" size="20" name="telefono" @error('telefono') style="border: 1px solid red" @enderror value="{{$data["Telefono"]}}"></th>
 
         </tr>
             <th>
@@ -33,10 +34,11 @@
             </th>
         <tr>
          <td colspan="8">
-            <input type="submit" name="submit" value="Actualizar">
+            <input type="submit" class="btn btn-primary mt-2" name="submit" value="Actualizar">
          </td>
 
         </tr>
         </form>
     </table>
+    </div>
 @endsection

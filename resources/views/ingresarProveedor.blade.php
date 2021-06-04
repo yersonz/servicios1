@@ -1,31 +1,33 @@
 
-@extends("layout")
-@section("contenido")
-    <h1>INGRESAR PROVEEDOR</h1>
-        <form class="form-group form-control-lg" method="post" action="/ingresar-proveedor" >
+@extends("layouts.app")
+@section("content")
+    <div class="container">
+    <h1>Ingresar Proveedor</h1>
+        <form method="post" action="/ingresar-proveedor" >
             @csrf
-                <th class="form-control"><input type="text" maxlength="100" name="nombre" @error('nombre') style="border: 1px solid red" @enderror placeholder="Nombre"></th>
+                <input type="text" maxlength="100" class="form-control" name="nombre" @error('nombre') style="border: 1px solid red" @enderror placeholder="Nombre"></th>
                 @error('nombre')
                 <br><span style="color: red">{{$message}}</span>
                 @enderror
                 <br>
-                <th class="form-control"><input type="text" maxlength="200" name="apellido" @error('apellido') style="border: 1px solid red" @enderror placeholder="Apellidos"></th>
+                <input type="text" maxlength="200" class="form-control" name="apellido" @error('apellido') style="border: 1px solid red" @enderror placeholder="Apellidos">
                 @error('apellido')
                 <br><span style="color: red">{{$message}}</span>
                 @enderror
                 <br>
-                <th class="form-control"><input type="text" maxlength="200" name="direccion" @error('direccion') style="border: 1px solid red" @enderror placeholder="Direccion"></th>
+                <input type="text" maxlength="200" class="form-control" name="direccion" @error('direccion') style="border: 1px solid red" @enderror placeholder="Direccion">
                 @error('direccion')
                 <br><span style="color: red">{{$message}}</span>
                 @enderror
                 <br>
-                <th class="form-control"><input type="number" maxlength="9" name="telefono" @error('telefono') style="border: 1px solid red" @enderror placeholder="Telefono/celular"></th>
+                <input type="number" maxlength="9" class="form-control" name="telefono" @error('telefono') style="border: 1px solid red" @enderror placeholder="Telefono/celular">
                 @error('telefono')
                 <br><span style="color: red">{{$message}}</span>
                 @enderror
                 <br>
-                <td colspan="5"><input type="submit" name="submit" value="Guardar"></td>
-                <td colspan="5"><input type="reset" name="reset" value="Limpiar"></td>
+                <td colspan="5"><input type="submit" class="btn btn-primary mt-2" name="submit" value="Guardar"></td>
+                <td colspan="5"><input type="reset" class="btn btn-secondary mt-21" name="reset" value="Limpiar"></td>
 
         </form>
+    </div>
 @endsection

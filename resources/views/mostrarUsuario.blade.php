@@ -1,6 +1,7 @@
-@extends("layout")
-@section("contenido")
-    <table class="container">
+@extends("layouts.app")
+@section("content")
+    <div class="container">
+    <table class="table">
         <tr>
             <th>Nombre</th>
             <th>Apellido</th>
@@ -21,7 +22,7 @@
                     @csrf
                     @method("DELETE")
                     <td>
-                        <input type="submit" name="eliminar" value="Eliminar">
+                        <input type="submit" class="btn btn-danger" name="eliminar" value="Eliminar">
                     </td>
                 </form>
 
@@ -30,4 +31,5 @@
 
 
     </table>
+    </div>
 @endsection

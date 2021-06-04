@@ -1,6 +1,7 @@
-@extends("layout")
-@section("contenido")
-    <table border="1">
+@extends("layouts.app")
+@section("content")
+    <div class="container">
+    <table class="table">
         <tr>
             <th>Nombre</th>
             <th>Apellido</th>
@@ -8,13 +9,13 @@
             <th>Telefono</th>
             <th>Email</th>
         </tr>
-        <form class="form-control-lg" method="post" action="/actualizar-usuario">
+        <form method="post" action="/actualizar-usuario">
             @csrf
             <tr>
                 <input type="hidden" name="id" value="{{$data["id"]}}">
-                <th><input type="text" size="10" name="nombre" @error('nombre') style="border: 1px solid red" @enderror value="{{$data["Nombre"]}}"></th>
-                <th><input type="text" size="10" name="apellido" @error('apellido') style="border: 1px solid red" @enderror value="{{$data["Apellidos"]}}"></th>
-                <th><input type="text" size="10" name="direccion" @error('direccion') style="border: 1px solid red" @enderror value="{{$data["Direccion"]}}"></th>
+                <th><input type="text" size="20" name="nombre" @error('nombre') style="border: 1px solid red" @enderror value="{{$data["Nombre"]}}"></th>
+                <th><input type="text" size="20" name="apellido" @error('apellido') style="border: 1px solid red" @enderror value="{{$data["Apellidos"]}}"></th>
+                <th><input type="text" size="20" name="direccion" @error('direccion') style="border: 1px solid red" @enderror value="{{$data["Direccion"]}}"></th>
                 <th><input type="text" size="10" name="telefono" @error('telefono') style="border: 1px solid red" @enderror value="{{$data["Telefono"]}}"></th>
                 <th><input type="text" size="30" name="email" @error('email') style="border: 1px solid red" @enderror value="{{$data["Email"]}}"></th>
 
@@ -39,11 +40,12 @@
 
             <tr>
                 <td colspan="8">
-                    <input type="submit" name="submit" value="Actualizar">
+                    <input type="submit" class="btn btn-primary" name="submit" value="Actualizar">
                 </td>
 
             </tr>
 
         </form>
     </table>
+    </div>
 @endsection

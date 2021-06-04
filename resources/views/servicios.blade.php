@@ -1,7 +1,8 @@
-@extends("layout")
-@section("contenido")
-    <table>
-        <h2>SERVICIOS</h2>
+@extends("layouts.app")
+@section("content")
+    <div class="container">
+    <table class="table">
+        <h2>Servicios</h2>
         <tr>
             <th>Nombre</th>
             <th>Tipo de Servicios</th>
@@ -9,9 +10,9 @@
         <form method="post" action="/ingresar-proveedor">
             @csrf
             <tr>
-                <th><input type="text" maxlength="100" name="nombre"></th>
+                <th><input type="text" class="form-control" size="20" maxlength="100" name="nombre"></th>
                 <th>
-                    <select >
+                    <select class="form-control">
                         <option name="enfermero">Enfermeros</option>
                         <option name="medio">Medicos</option>
                         <option name="electricista">Electricista</option>
@@ -23,14 +24,12 @@
                 </th>
             </tr>
             <tr>
-                <td colspan="5"><input type="submit" name="submit" value="Buscar"></td>
+                <td colspan="5"><input type="submit" class="btn btn-primary mt-2" name="submit" value="Buscar"></td>
             </tr>
             <tr>
-                <td colspan="5"><input type="reset" name="reset" value="Limpiar"></td>
+                <td colspan="5"><input type="reset" class="btn btn-outline-secondary" name="reset" value="Limpiar"></td>
             </tr>
         </form>
-
-
-
     </table>
+    </div>
 @endsection
