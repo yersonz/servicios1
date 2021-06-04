@@ -15,7 +15,7 @@ use App\Http\Controllers\ProveedorController;
 |
 */
 
-Route::view("/", "layout");
+Route::view("/", "welcome");
 Route::view("/ingreso-usuario","ingresarUsuario");
 Route::post("/ingresar-usuario",[UsuarioController::class,"guardar"]);
 Route::get("/mostrar-usuario",[UsuarioController::class,"mostrar"]);
